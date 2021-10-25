@@ -1,0 +1,292 @@
+
+/*
+================================================================================
+|                                     FOOTER                                   |
+================================================================================
+*/
+
+.footer{    
+    padding: 45px 0 80px;
+    position: relative; 
+    background: url('../img/bg-footer.jpg') no-repeat center center;
+    background-size: cover;
+    &-row.y-row{
+        @include justify-content(space-between);
+        @include flex-wrap(nowrap);
+    }
+    &-col.y-col{
+        width: auto;
+        
+    }
+    
+    &-col{
+        &-1{
+            max-width: 262px;
+        }
+        &-4{
+            max-width: 350px;
+            .footer-social{
+                display: none;
+            }
+        }
+    }
+    
+    &__logo{
+        width: 232px;
+        display: block;
+        margin-bottom: 30px;
+        img{
+            display:block;
+            width: 100%;
+            height: auto;
+        }
+    }
+    
+    &-contacts{
+        font-size: 16px;
+        line-height: 22px;
+        color: $color-white;
+        margin-bottom: 82px;
+        li{
+            margin-bottom:3px;
+            a{
+                color:inherit;
+                &:hover{
+                    color: $color-blue-2;
+                }
+                &.footer-contacts__phone{
+                    font-weight: 700;
+                    font-size: 20px;
+                    line-height: 30px;
+                    &:hover{
+                        color: $color-blue-2;
+                    }
+                }
+                &.footer-contacts__email{
+                    color: $color-blue-2;
+                    font-size: 15px;
+                    &:hover{
+                        color: $color-white;
+                    }
+                }
+                &.footer-contacts__map{
+                    color: $color-blue-2;
+                    font-size: 12px;
+                    text-transform: uppercase;
+                    text-decoration: underline;
+                    &:hover{
+                        color: $color-white;
+                        text-decoration: underline;
+                    }
+                }
+            }
+            b{
+                font-weight:600;
+            }
+            
+        }
+    }
+    &-arda{
+        font-size: 14px;
+        line-height: 17px;
+        text-transform: uppercase;
+
+        color: #FFFFFF;
+        margin-bottom: 30px;
+        p{
+            margin-bottom:12px;
+        }
+    }
+    
+    &-social{
+        overflow: hidden;
+        &__title{
+            position: relative;
+            display: inline-block;
+            color: #D2D2D2;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+                font-size: 12px;
+            line-height: 15px;
+            letter-spacing: 0.04em;
+            font-weight: 600;
+            &:after{
+                content: "";
+                position: absolute;
+                left: calc(100% + 10px);
+                width: 300px;
+                background:  #D2D2D2;
+                height: 1px;
+                top: 50%;
+            }
+        }
+        .aside-social{
+            position: relative;
+            right: auto;
+            @include flex-direction(row);
+            @include justify-content(space-between);
+            &-item{
+                margin:0;
+                &:last-child{
+                    margin: 0;
+                }
+                &__link{
+                    color: #D2D2D2;
+                    &:hover{
+                        color: $color-blue-2;
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    .aside-nav-item__link {
+
+        color: #C0C6D4;
+        &:hover{
+            color: $color-blue-2;
+            b{
+                color: $color-blue-2;
+            }
+        }
+        b{
+            color: $color-white;
+            transition: $default-transition;
+        }
+    }
+    .aside-title{
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+    .aside-nav{
+        font-size: 14px;
+        margin-bottom: 7px;
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+    .aside-title+.aside-title{
+            margin-top: 10px;
+    }
+    
+ 
+    
+
+}
+
+
+@media screen and (max-width: 1620px) {
+   
+}
+@media screen and (max-width: 1439px) {
+   
+    
+}
+
+@media screen and (max-width: 1199px) {
+    .footer-col.y-col{
+        width: 50%;
+        max-width: 50%;
+    }
+    .footer-col{
+        &-2,
+        &-3{
+            display: none;
+        }
+    }
+    .footer-social .aside-social{
+        max-width: 230px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .footer-arda{
+        font-size: 10px;line-height: 12px;
+        display: flex;
+        flex-direction: row-reverse;
+        max-width: 270px;
+        img{
+            width:64px;
+            height: 22px;
+            flex: none;
+            margin-right: 15px;
+        }
+    }
+   
+    .footer .aside-title {
+        font-size: 22px;
+        margin-bottom: 5px;
+        line-height: 30px;
+        text-transform: none;
+    }
+    .footer-social{
+        max-width: 240px;
+    }
+    .footer__logo {
+        width: 200px;
+            margin-bottom: 20px;
+    }
+    .footer-contacts li a.footer-contacts__phone {
+        font-size: 18px;
+        line-height: 24px;
+    }
+    .footer-contacts li a.footer-contacts__email{
+        font-size: 14px;
+    }
+    .footer-contacts{
+        font-size: 15px;
+    }
+    .footer-contacts li a.footer-contacts__map{
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    
+    
+}
+
+
+@media screen and (max-width: 575px) {
+    .footer-col.y-col{
+        width: 100%;
+        max-width: 100%;
+    }
+    .footer-row.y-row{
+        @include flex-wrap(wrap);
+    }
+    .footer{
+        padding: 80px 0;
+        background-position: 30% center;
+    }
+    .footer-contacts{
+        margin-bottom: 20px;
+    }
+    .footer-col-1{
+        .footer-social{
+            display: none;
+        }
+    }
+    .footer-col-4{
+        .footer-social{
+            display: block;
+            margin-top: 50px;
+        }
+    }
+    .footer-social {
+        max-width: 290px;
+    }
+    .footer-social .aside-social {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 479px) {
+   
+    
+}
+
+@media screen and (max-width: 374px) {
+    
+}
