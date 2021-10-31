@@ -31,7 +31,7 @@ $(document).ready(function(){
     
     $('.nav-item_parent').mouseenter(function () {
         if($(window).innerWidth()>991){
-             $(this).find('.subnav-wrapper').stop(true, false, true).slideDown(300);
+            $(this).find('.subnav-wrapper').stop(true, false, true).slideDown(300);
             $(this).addClass('hover');
         }
        
@@ -160,19 +160,7 @@ $(document).ready(function(){
         $('#'+$(this).attr('data-tab')).addClass('active');        
     });
     
-    $('.reviews-item__text').mCustomScrollbar({
-        axis: 'y'        
-    });  
     
-    (function($){
-        $(window).resize(function(){
-            if($(this).width()>1023){
-                $('.reviews-item__text').mCustomScrollbar(); //apply scrollbar with your options 
-            }else{
-                $('.reviews-item__text').mCustomScrollbar("destroy"); //destroy scrollbar 
-            }
-        }).trigger("resize");
-    })(jQuery);
     
     $('.js-slider-reviews .y-row').slick({
         infinite: true,
@@ -505,11 +493,7 @@ $(document).ready(function(){
     });
     
     
-    var ll2 = new LazyLoad({
-            elements_selector: ".slick-slide .lazyload",
-    });
     
-    ll2.loadAll();
     
     $('.strategy-includes-item__toggle').on('click', function(event) {        
         $(this).parents('.strategy-includes-item').find('.strategy-includes-item__content').slideToggle();
@@ -567,9 +551,183 @@ $(document).ready(function(){
         $(this).toggleClass('active');      
     });
     
+    $('.block-search__toggle').on('click', function(event) {        
+        $(this).parents('.scroll-menu-block').toggleClass('active');
+        $(this).parents('.block-search').toggleClass('active');
+        return false;
+    });
+    
+    $('.js-slider-blog-2 .y-row').slick({
+        infinite: true,
+        arrows:true,
+        dots:true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        fade:false,
+        autoplay:false,
+        swipeToSlide:true,
+        prevArrow:'<button type="button" class="slick-prev"><svg width="6" height="10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m5.506 9.84.33-.328a.543.543 0 0 0 .16-.387.543.543 0 0 0-.16-.387L2.099 5.002 5.84 1.26a.545.545 0 0 0 0-.773L5.513.16a.549.549 0 0 0-.774 0L.269 4.614a.558.558 0 0 0-.175.388v.002c0 .147.073.284.175.387l4.458 4.45a.556.556 0 0 0 .779-.001Z" /></svg></button>',
+        nextArrow:'<button type="button" class="slick-next"><svg width="6" height="10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m.494 9.84-.33-.328a.543.543 0 0 1-.16-.387c0-.147.057-.284.16-.387l3.737-3.736L.16 1.26a.545.545 0 0 1 0-.773L.487.16a.549.549 0 0 1 .774 0l4.47 4.454c.103.103.175.24.175.388v.002a.562.562 0 0 1-.175.387L1.273 9.84a.556.556 0 0 1-.779-.001Z"/></svg></button>',
+        appendArrows:$('.js-slider-blog-2').find('.slider-blog-2-arrows'),
+        responsive: [     
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2, 
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: "unslick"
+            }
+        ]
+    }); 
+    
+    $(window).on('resize orientationchange', function() {
+      $('.js-slider-blog-2 .y-row').slick('resize');
+    });
+    
+    
+    $('.js-slider-events .y-row').slick({
+        infinite: true,
+        arrows:true,
+        dots:true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        fade:false,
+        autoplay:false,
+        swipeToSlide:true,
+        prevArrow:'<button type="button" class="slick-prev"><svg width="6" height="10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m5.506 9.84.33-.328a.543.543 0 0 0 .16-.387.543.543 0 0 0-.16-.387L2.099 5.002 5.84 1.26a.545.545 0 0 0 0-.773L5.513.16a.549.549 0 0 0-.774 0L.269 4.614a.558.558 0 0 0-.175.388v.002c0 .147.073.284.175.387l4.458 4.45a.556.556 0 0 0 .779-.001Z" /></svg></button>',
+        nextArrow:'<button type="button" class="slick-next"><svg width="6" height="10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m.494 9.84-.33-.328a.543.543 0 0 1-.16-.387c0-.147.057-.284.16-.387l3.737-3.736L.16 1.26a.545.545 0 0 1 0-.773L.487.16a.549.549 0 0 1 .774 0l4.47 4.454c.103.103.175.24.175.388v.002a.562.562 0 0 1-.175.387L1.273 9.84a.556.556 0 0 1-.779-.001Z"/></svg></button>',
+        appendArrows:$('.js-slider-events').find('.slider-events-arrows'),
+        responsive: [            
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 2, 
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: "unslick"
+
+            }
+        ]
+    }); 
+    
+    $(window).on('resize orientationchange', function() {
+      $('.js-slider-events .y-row').slick('resize');
+    });
+    
+    $('.js-slider-media .y-row').slick({
+        infinite: true,
+        arrows:true,
+        dots:true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        fade:false,
+        autoplay:false,
+        swipeToSlide:true,
+        prevArrow:'<button type="button" class="slick-prev"><svg width="6" height="10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m5.506 9.84.33-.328a.543.543 0 0 0 .16-.387.543.543 0 0 0-.16-.387L2.099 5.002 5.84 1.26a.545.545 0 0 0 0-.773L5.513.16a.549.549 0 0 0-.774 0L.269 4.614a.558.558 0 0 0-.175.388v.002c0 .147.073.284.175.387l4.458 4.45a.556.556 0 0 0 .779-.001Z" /></svg></button>',
+        nextArrow:'<button type="button" class="slick-next"><svg width="6" height="10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m.494 9.84-.33-.328a.543.543 0 0 1-.16-.387c0-.147.057-.284.16-.387l3.737-3.736L.16 1.26a.545.545 0 0 1 0-.773L.487.16a.549.549 0 0 1 .774 0l4.47 4.454c.103.103.175.24.175.388v.002a.562.562 0 0 1-.175.387L1.273 9.84a.556.556 0 0 1-.779-.001Z"/></svg></button>',
+        appendArrows:$('.js-slider-media').find('.slider-media-arrows'),
+        responsive: [            
+            {
+                //breakpoint: 9999,
+                //settings: "unslick"
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2, 
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    variableWidth:true,
+                }
+            }
+        ]
+    }); 
+    
+    $(window).on('resize orientationchange', function() {
+      $('.js-slider-media .y-row').slick('resize');
+    });
+    
+     $('.custom-select').selectric({
+        disableOnMobile: false,
+        nativeOnMobile: true,
+        maxHeight: 218,
+        arrowButtonMarkup: '<b class="button"><svg width="8" height="4" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M.844.366 1.058.15A.354.354 0 0 1 1.31.046c.096 0 .185.037.252.104L4 2.588l2.44-2.44a.354.354 0 0 1 .504 0l.214.213a.358.358 0 0 1 0 .505L4.252 3.78a.364.364 0 0 1-.253.114h-.001a.367.367 0 0 1-.253-.114L.843.874a.362.362 0 0 1 0-.508Z"></svg></b>',
+        onChange: function() {
+           
+        }        
+    });
+  
+    
+    
+    
     if($('#contacts-map').length){
         initMap();
     }    
+    
+    var ll2 = new LazyLoad({
+            elements_selector: ".slick-slide .lazyload",
+    });
+    
+    ll2.loadAll();
+    
+    $('.tooltip').tooltipster({
+         theme: 'tooltipster-shadow',
+    });
+    
+     $('.faq-item__title').on('click', function(event) {        
+        $(this).next('.faq-item__content').slideToggle();
+        $(this).toggleClass('active');      
+    });
+    
+    
+    $('.js-slider-approach .y-row').slick({
+        infinite: false,
+        arrows:false,
+        dots:false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        swipeToSlide:true,       
+        responsive: [            
+            {
+                breakpoint: 9999,
+                settings: "unslick"
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    variableWidth:true,
+                }
+            }
+        ]
+    }); 
+    
+    $(window).on('resize orientationchange', function() {
+      $('.js-slider-approach .y-row').slick('resize');
+    });
+    
+    
+    $('.reviews-item__text').mCustomScrollbar({
+        axis: 'y'        
+    });  
+    
+    (function($){
+        $(window).resize(function(){
+            if($(this).width()>1023){
+                $('.reviews-item__text').mCustomScrollbar(); //apply scrollbar with your options 
+            }else{
+                $('.reviews-item__text').mCustomScrollbar("destroy"); //destroy scrollbar 
+            }
+        }).trigger("resize");
+    })(jQuery);
+    
   
     
 });

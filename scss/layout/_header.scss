@@ -72,13 +72,30 @@
             display: block;
             height: 40px;
             line-height: 40px;
-            padding: 0 20px;
-            
+            padding: 0 20px;            
             border-radius: 3px;
-            transition: none;
+            z-index: 1;
+            //transition: none;
+            &:before{
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                //top: 0;
+                border-radius: 3px;
+                height: 0;
+                background: rgba(31, 43, 69, 0.9);
+                z-index: -1;
+                transition: all 0.4s;
+            }
+            
             &:hover{
                 color: $color-white;
-                background: rgba(31, 43, 69, 0.9);
+                //background: rgba(31, 43, 69, 0.9);
+                &:before{
+                    height: 100%;
+                }
             }             
             &.active{
                 color: $color-blue;
@@ -86,14 +103,21 @@
         }
         
         &:hover{
+            z-index: 2;
             .nav-item__link{
                 color: $color-white;
-                background: rgba(31, 43, 69, 0.9);
+                //background: rgba(31, 43, 69, 0.9);
+                &:before{
+                    height: 100%;
+                }
             }
         }
         &_parent{
             .nav-item__link{
                 border-radius: 3px 3px 0 0;
+                &:before{
+                    border-radius: 3px 3px 0 0;
+                }
             }
         }
     }   
